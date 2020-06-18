@@ -6,7 +6,6 @@ $(document).ready(function() {
     $('#login-modal').foundation('reveal', 'open');
 });
 
-/*prueba*/
 
 /**
  * Autentica a un usuario en el servidor mediante

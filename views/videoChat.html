@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+-->
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="WebRTC code samples">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <meta itemprop="description" content="Client-side WebRTC code samples">
+    <meta itemprop="image" content="../../../images/webrtc-icon-192x192.png">
+    <meta itemprop="name" content="WebRTC code samples">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta id="theme-color" name="theme-color" content="#ffffff">
+
+    <base target="_blank">
+
+    <title>VideoChat</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" sizes="192x192" href="../../../images/webrtc-icon-192x192.png">
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../../css/main.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+
+</head>
+
+<body>
+
+    <center><div id="container">
+            <h1><span>Alumni Video Chat</span></h1>
+            
+            <div class="max-size">
+                <div id="picture-in-picture">
+                    <div id="caller"><video id="localVideo" playsinline autoplay muted></video></div>
+                    <div id="me"><video id="remoteVideo" playsinline autoplay></video></div>
+                    <div id="start"><button type="button" class="btn btn-primary" id="startButton">Encender cámara</button></div>
+                    <div id="call"><button type="button" class="btn btn-success" id="callButton">Llamar</button></div>
+                    <div id="hang"><button type="button" class="btn btn-danger" id="hangupButton">Colgar</button></div>
+                </div>
+            </div>
+            
+            <div class="box">
+                <button type="button" class="btn btn-light" id=""><a href="/" target="_self">Volver al chat</a></button> 
+            </div>
+        </div>
+
+        <div class="box">
+            <span>SDP Semantics:</span>
+            <select id="sdpSemantics">
+                <option selected value="">Default</option>
+                <option value="unified-plan">Unified Plan</option>
+                <option value="plan-b">Plan B</option>
+            </select>
+        </div></center>
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="js/main.js" async></script>
+
+<script src="../../../js/lib/ga.js"></script>
+</body>
+</html>

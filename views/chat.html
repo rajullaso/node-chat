@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/87ea81de8f.js" crossorigin="anonymous"></script>
+
+    <title>Chat</title>
+</head>
+
+<body>
+
+    <div class="off-canvas-wrap height100" data-offcanvas>
+        <div class="inner-wrap height100">
+
+            <nav class="tab-bar large-offset-1 large-10" style="height: 100px !important; margin-top: 30px;">
+                <section class="middle tab-bar-serction text-center">
+                    <h1 class="title" style="height: 100px !important; padding-top: 25px;">Alumni Chat</h1>
+                </section>
+                <section class="right-small show-for-small-only">
+                    <a href="#" class="right-off-canvas-toggle menu-icon">
+                        <span></span>
+                    </a>
+                </section>
+            </nav>
+
+            <aside class="right-off-canvas-menu height100 online-users online-users-aside">
+
+                <br>
+                <h4>Usuarios conectados:</h4>
+                <div class="online-userslist"></div>
+            </aside>
+
+            <section class="main-section height100">
+                <div class="large-offset-1 large-10 height100">
+
+                    <div class="medium-4 columns hide-for-small-only height100 online-users" style="border-radius: 0px 0px 0px 10px;">
+                        <br>
+                        <h4>Usuarios conectados:</h4>
+
+                        <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
+                        <div class="action_menu">
+                            <ul>
+                                <li onclick="openEditProfile()" type="button"><i class="fas fa-user-circle"></i> Ver perfil
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="online-userslist">
+                        </div>
+
+                    </div>
+
+                    <div class="small-12 medium-8 columns 
+                  height100 messages" style="border-radius: 0px 0px 10px 0px;">
+                        <div id="list-msgs" class="height-messages">
+
+                        </div>
+
+                        <div class="height10">
+                            <textarea id="new-msg" placeholder="Nuevo mensaje"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <a href="#" class="exit-off-canvas"></a>
+
+        </div>
+    </div>
+
+    <!-- Modal dialog for login -->
+    <div id="login-modal" class="reveal-modal small" data-reveal>
+        <h3 style="color: black; text-align: center !important;">Loguéate para acceder al chat</h3>
+
+        <div id="alerts"></div>
+        <form id="login-form">
+            <div class="row">
+                <div class="small-12">
+                    <label for="username">Usuario:</label>
+                    <input name="username" type="text" placeholder="Username" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12">
+                    <label>Password:</label>
+                    <input name="password" type="password" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12">
+                    <button onclick="login()" type="button" class="btn btn-success" style="float: right;">Login</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12">
+                    <p class="text-center">
+                        O <a href='/signup'>regístrate</a> si no tienes una cuenta
+                    </p>
+                </div>
+            </div>
+        </form>
+        <div class="panel text-center">
+            <h4>Alumni Chat</h4>
+            <p class="text-justify">
+                Chatea con tus compañeros y realiza videollamadas.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal dialog for user profile -->
+    <div id="profile-modal" class="reveal-modal small" data-reveal>
+
+    <div class="" style="text-align: center !important;">
+        <img src="img/cevLogo.png" class="user-image" style="width: 100px; height: 100px;">
+    </div>
+    <center><button onclick="" type="button" style="font-style: italic; background-color: white; color: black; height: 20px;">Cambiar imagen</button>
+    </center>
+    <div class="user_infoEd">
+        <span id="username1" style="color: black;">Usuario</span>
+    </div>
+
+    <div id="alerts"></div>
+    <form id="editProfile-form">
+        <div id="alert-container" class="row hide">
+            <div class="small-12">
+                <div class="alert-box warning round">
+                    <span id="msg" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12">
+                <label>Usuario:</label>
+                <input id="username2" name="username" type="text" readonly="readonly" placeholder="Usuario">
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12">
+                <label>Nombre:</label>
+                <input id="name" name="name" type="text" placeholder="Nombre">
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12">
+                <label>Apellidos:</label>
+                <input id="lastName" name="lastName" type="text" placeholder="Apellidos">
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12">
+                <label>Email:</label>
+                <input id="email" name="email" type="email" placeholder="Email">
+            </div>
+        </div>
+        <div class="row">
+                <div class="small-12">
+                    <label>Nuevo password:</label>
+                    <input id="newPassword" name="newPassword" type="password" placeholder="Escribir Password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12">
+                    <label>Nuevo password:</label>
+                    <input id="repNewPassword" name="repNewPassword" type="password" placeholder="Repetir Password">
+                </div>
+            </div>
+        <div class="row">
+            <div class="small-12">
+                <button onclick="closeEditProfile()" type="button" class="btn btn-info" style="float: left; margin-right: 15px;">Cerrar</button>
+                <button id="updateBtn" onclick="wrongPass()" type="submit" class="btn btn-success" style="float: left;">Guardar</button>
+            </div>
+        </div>
+    </form>
+    <div class="panel text-center">
+        <p class="text-justify">
+            Antes de cambiar cualquier dato revisa bien la información.
+        </p>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation.offcanvas.js"></script>
+    <script src="js/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+    <script src="js/chat.js"></script>
+    <script>
+        window.onload = autoLogin();
+    </script>
+    <script>
+        /** * Esta funcion se ejecuta al hacer clic en el boton 'Signup' * registra mediante ajax al nuevo usuario */
+        $('#updateBtn').on('click', function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: '/updateUser',
+                data: $('#editProfile-form').serialize(),
+                success: function(data) {
+                    $('#msg').empty();
+                    $('#alert-container').addClass('hide');
+                    if (data.error) {
+                        $('#msg').append(data.err.msg);
+                        $('#alert-container').removeClass('hide');
+                    } else {
+                        $('#msg').append('¡Perfil Modificado!');
+                        $('#alert-container').removeClass(
+                            'hide');
+                        $('#editProfile-form')[0].reset();
+                    }
+                },
+                dataType: 'json'
+            });
+        })
+    </script>
+</body>
+
+</html>

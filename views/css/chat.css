@@ -1,0 +1,235 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+
+/* HTML */
+
+body {
+    height: 100%;
+			margin: 0;
+			background: #7F7FD5;
+	       background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+	        background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+}
+
+
+/* Clases */
+
+.bordered {
+    border: 4px solid red;
+}
+
+.height-messages {
+    border-bottom: 3px solid #16A085;
+    height: -webkit-calc(100% - 10% - 45px);
+    height: -moz-calc(100% - 10% - 45px);
+    height: calc(100% - 10% - 45px);
+    min-height: -webkit-calc(100% - 10% - 45px);
+    min-height: -moz-calc(100% - 10% - 45px);
+    min-height: calc(100% - 10% - 45px);
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+.height10 {
+    height: 10%;
+    max-height: 10%;
+    min-height: 10%;
+}
+
+.height100 {
+    height: 96%;
+    max-height: 96%;
+    min-height: 96%;
+}
+
+.messages {
+    background: #FFF;
+}
+
+.message {
+    margin-top: 15px;
+}
+
+.message-body {
+    color: #111;
+    margin-top: 5px;
+}
+
+.message-date {
+    font-size: 0.875em;
+}
+
+.message-title {
+    color: #177b77;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.online-user {
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+
+.online-users {
+    background: rgba(0, 0, 0, 0.5);
+    border-right: 2px solid #2980B9;
+}
+
+.online-users-aside {
+    padding-left: 20px;
+}
+
+.online-userslist {
+    color: white;
+}
+
+.user-image {
+    border: 2px solid #1ABC9C;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.tab-bar {
+    background: #177b77;
+background: -webkit-linear-gradient(left, #177b77, #23bbb6);
+background: -moz-linear-gradient(left, #177b77, #23bbb6);
+background: -ms-linear-gradient(left, #177b77, #23bbb6);
+background: -o-linear-gradient(left, #177b77, #23bbb6);
+background: linear-gradient(to right, #177b77, #23bbb6);
+    color: #FFF;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#action_menu_btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+.action_menu{
+    z-index: 1;
+    position: absolute;
+    padding: 15px 0;
+    background-color: rgba(0,0,0,0.5);
+    color: black;
+    border-radius: 15px;
+    top: 30px;
+    right: 15px;
+    display: none;
+}
+.action_menu ul{
+    list-style: none;
+    padding: 0;
+margin: 0;
+}
+.action_menu ul li{
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+}
+.action_menu ul li i{
+    padding-right: 10px;
+
+}
+.action_menu ul li:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.img_cont{
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+.offline{
+background-color: #c23616 !important;
+}
+.user_infoEd{
+margin-top: auto;
+margin-bottom: 20px;
+text-align: center !important;
+}
+.user_infoEd span{
+font-size: 20px;
+color: black !important;
+}
+.user_infoEd p{
+font-size: 10px;
+color: black;
+}
+
+.alert-box {
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    font-weight: normal;
+    margin-bottom: 1.25rem;
+    position: relative;
+    padding: 0.875rem 1.5rem 0.875rem 0.875rem;
+    font-size: 0.8125rem;
+    transition: opacity 300ms ease-out;
+    background-color: #008cba;
+    border-color: #0078a0;
+    color: #fff
+}
+
+.alert-box .close {
+    font-size: 1.375rem;
+    padding: 9px 6px 4px;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.6875rem;
+    right: 0.25rem;
+    color: #333;
+    opacity: 0.3
+}
+
+.alert-box .close:hover,
+.alert-box .close:focus {
+    opacity: 0.5
+}
+
+.alert-box.radius {
+    border-radius: 3px
+}
+
+.alert-box.round {
+    border-radius: 1000px
+}
+
+.alert-box.success {
+    background-color: #43ac6a;
+    border-color: #3a945b;
+    color: #fff
+}
+
+.alert-box.alert {
+    background-color: #f04124;
+    border-color: #de2d0f;
+    color: #fff
+}
+
+.alert-box.secondary {
+    background-color: #e7e7e7;
+    border-color: #c7c7c7;
+    color: #4f4f4f
+}
+
+.alert-box.warning {
+    background-color: #5ef024;
+    border-color: #32de0f;
+    color: #fff
+}
+
+.alert-box.info {
+    background-color: #a0d3e8;
+    border-color: #74bfdd;
+    color: #4f4f4f
+}
+
+.alert-box.alert-close {
+    opacity: 0
+}
